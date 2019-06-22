@@ -19,8 +19,6 @@ function* signingIn(action) {
   const { credentials } = action;
   try {
     const response = yield call(AuthAPI.signIn, credentials);
-    console.log(response);
-
     const { token } = response;
     window.localStorage.setItem("token", token);
 
