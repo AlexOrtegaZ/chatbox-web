@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import SignUp from './SignUp';
-import { signUp } from '../../../../redux/actions/auth';
+import { signUp, validateUser } from '../../../../redux/actions/auth';
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({ user: state.auth.user })
 
 const mapDispatchToProps = {
     signUp,
+    validateUser,
 };
 
 export default connect(

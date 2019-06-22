@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 class SignUp extends React.Component {
   state = {
     name: "",
@@ -6,6 +8,21 @@ class SignUp extends React.Component {
     email: "",
     password: ""
   };
+
+  componentDidMount() {
+    const { validateUser } = this.props;
+
+    validateUser();
+  }
+
+  componentDidUpdate() {
+    const { history, user } = this.props;
+
+    if(user && history) {
+      history.push("/");
+    } 
+  }
+  
   signUp = event => {
     const { signUp } = this.props;
     const { name, username, email, password } = this.state;
@@ -85,4 +102,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);

@@ -4,11 +4,11 @@ axios.interceptors.request.use(function(config) {
   const token = window.localStorage.getItem('token');
 
   if ( token != null ) {
-    config.headers.Authorization = `${token}`;
+    config.headers.Authorization = `Bearer ${token}`;
   }
 
   return config;
-}, (err) => Promise.reject(err));
+}, (err) => Promise.reject(err)); 
 
 export class API {
   constructor(baseUrl = "https://0924b73d.ngrok.io/api") {

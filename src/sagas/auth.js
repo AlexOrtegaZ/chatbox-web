@@ -29,7 +29,21 @@ function* signingIn(action) {
   }
 }
 
+function* validateUser() {
+  try {
+    const { user } = yield call(AuthAPI.validateUser);
+    if(user._id) {
+      yield put(actions.signInSuccess(user));
+    }
+  } catch(err) {
+    console.log(err);
+  }
+  
+  
+}
+
 export default [
   takeLatest(types.SIGN_UP, signingUp),
-  takeLatest(types.SIGN_IN, signingIn)
+  takeLatest(types.SIGN_IN, signingIn),
+  takeLatest(types.VALIDATE_USER, validateUser)
 ];
