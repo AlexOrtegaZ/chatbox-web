@@ -21,7 +21,7 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="signup">
         <div className="header-signUp">
           <h1>Register</h1>
           <hr />
@@ -77,7 +77,7 @@ class SignUp extends React.Component {
           <br />
           <br />
           <button type="submit" className="registerbtn" onClick={this.signUp}>
-            REGISTER
+            Register
           </button>
         </div>
       </div>

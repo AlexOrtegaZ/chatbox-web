@@ -1,51 +1,57 @@
 import React from "react";
+class SignIn extends React.Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  signIn = event => {
+    const { signIn } = this.props;
+    const { email, password } = this.state;
 
-class SignUp extends React.Component {
+    signIn({ email, password });
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
-      <div>
-        <div className="header-signUp">
+      <div className="signin">
+        <div className="header-signIn">
           <h1>Login</h1>
           <hr />
         </div>
-        <div className="form-signUp">
-          <label for="name">
-            <b>Name:</b>
-          </label>
-          <input type="text" placeholder="Enter Name" name="name" required />
-          <br />
-          <br />
-          <label for="username">
-            <b>Username:</b>
+        <div className="form-signIn">
+          <label htmlFor="email">
+            <b>Email:</b>
           </label>
           <input
             type="text"
-            placeholder="Enter Username"
-            name="username"
+            placeholder="Enter Email"
+            name="email"
+            onChange={this.handleChange}
             required
           />
           <br />
           <br />
-          <label for="email">
-            <b>Email</b>
-          </label>
-          <input type="text" placeholder="Enter Email" name="email" required />
-          <br />
-          <br />
-          <label for="password">
-            <b>Password</b>
+          <label htmlFor="password">
+            <b>Password:</b>
           </label>
           <input
             type="password"
             placeholder="Enter Password"
             name="password"
+            onChange={this.handleChange}
             required
           />
           <br />
           <br />
           <br />
-          <button type="submit" class="registerbtn">
-            LOGIN
+          <button type="submit" className="registerbtn" onClick={this.signIn}>
+            Login
           </button>
         </div>
       </div>
@@ -53,4 +59,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default SignIn;
