@@ -1,7 +1,8 @@
-import * as types from '../actions/auth';
+import * as types from '../constants/auth';
 
-export const signUp = () => ({
+export const signUp = (user) => ({
     type: types.SIGN_UP,
+    user,
 });
 
 export const signUpSuccess = (user) => ({
@@ -13,8 +14,9 @@ export const signUpFailure = () => ({
     type: types.SIGN_UP_FAILURE
 });
 
-export const signIn = () => ({
+export const signIn = (credentials) => ({
     type: types.SIGN_IN,
+    credentials,
 });
 
 export const signInSuccess = (user) => ({

@@ -37,3 +37,5 @@ export class API {
     }).then(data => data.data);
   }
 }
+
+export const baseUrl = '';
