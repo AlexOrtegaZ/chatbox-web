@@ -1,21 +1,21 @@
 import { API } from "./API";
 
 class AuthAPI extends API {
-  signUp({ username, email, name, password }) {
-    return this.makeRequest("/users", "POST", {
+  signUp = ({ username, email, name, password }) => {
+    return this.makeRequest("users", "POST", {
       username,
       email,
       name,
       password
     });
-  }
+  };
 
-  signIn({ email, password }) {
-    return this.makeRequest("/auth/token", "POST", {
-      email,
+  signIn = ({ email: login, password }) => {
+    return this.makeRequest("auth/token", "POST", {
+      login,
       password
     });
-  }
+  };
 }
 
-export default AuthAPI;
+export default new AuthAPI();

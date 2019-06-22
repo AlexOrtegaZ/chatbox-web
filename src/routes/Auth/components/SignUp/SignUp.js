@@ -1,16 +1,22 @@
 import React from "react";
 class SignUp extends React.Component {
   state = {
-    name: "Alex",
-    username: "Alex12",
-    email: "alex@algo.com",
-    password: "123456"
+    name: "",
+    username: "",
+    email: "",
+    password: ""
   };
   signUp = event => {
     const { signUp } = this.props;
     const { name, username, email, password } = this.state;
 
     signUp({ name, username, email, password });
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -24,7 +30,13 @@ class SignUp extends React.Component {
           <label htmlFor="name">
             <b>Name:</b>
           </label>
-          <input type="text" placeholder="Enter Name" name="name" required />
+          <input
+            type="text"
+            placeholder="Enter Name"
+            name="name"
+            onChange={this.handleChange}
+            required
+          />
           <br />
           <br />
           <label htmlFor="username">
@@ -34,6 +46,7 @@ class SignUp extends React.Component {
             type="text"
             placeholder="Enter Username"
             name="username"
+            onChange={this.handleChange}
             required
           />
           <br />
@@ -41,7 +54,13 @@ class SignUp extends React.Component {
           <label htmlFor="email">
             <b>Email:</b>
           </label>
-          <input type="text" placeholder="Enter Email" name="email" required />
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            onChange={this.handleChange}
+            required
+          />
           <br />
           <br />
           <label htmlFor="password">
@@ -51,12 +70,13 @@ class SignUp extends React.Component {
             type="password"
             placeholder="Enter Password"
             name="password"
+            onChange={this.handleChange}
             required
           />
           <br />
           <br />
           <br />
-          <button type="submit" className="registerbtn" onclick={this.signUp}>
+          <button type="submit" className="registerbtn" onClick={this.signUp}>
             REGISTER
           </button>
         </div>

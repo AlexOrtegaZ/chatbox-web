@@ -29,7 +29,8 @@ export class API {
     this.baseUrl = baseUrl;
   }
 
-  makeRequest({ url, method, data }) {
+  makeRequest(url, method, data) {
+    console.log(this);
     return axios({
       url: `${this.baseUrl}/${url}`,
       method,
@@ -37,5 +38,3 @@ export class API {
     }).then(data => data.data);
   }
 }
-
-export const baseUrl = '';
