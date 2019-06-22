@@ -1,11 +1,11 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import * as types from '../redux/constants/auth';
-import * as actions from '../redux/actions';
+import * as actions from '../redux/actions/auth';
 import AuthAPI from '../services/AuthAPI';
 
-function* signingUp(user) {
+function* signingUp(action) {
+    console.log(action);
     try {
-        
         const response = yield call(AuthAPI.signUp, user);
         yield put(actions.signIn(user));
 
