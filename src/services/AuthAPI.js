@@ -16,6 +16,9 @@ class AuthAPI extends API {
       password
     });
   };
+  validateUser = () => {
+    return this.makeRequest("auth", "GET");
+  }
 }
 
 export default new AuthAPI();

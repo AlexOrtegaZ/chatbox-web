@@ -5,12 +5,14 @@ import store from './redux/createStore';
 import './App.css';
 import Home from './routes/Home';
 import Auth from './routes/Auth';
+import PrivateRoute from './PrivateRoute';
 
 const routes = [
   {
     path: '/',
     exact: true,
     component: Home,
+    private: true,
   },
   {
     path: '/auth',
@@ -26,7 +28,10 @@ function App() {
           <Switch>
             {
               routes.map(route => (
-                <Route {...route} key={route.path} />
+                route.private ?
+                <PrivateRoute {...route}  key={route.path}></PrivateRoute> 
+                : <Route {...route} key={route.path} />
+                  
               ))
             }
           </Switch>

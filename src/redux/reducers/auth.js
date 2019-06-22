@@ -19,9 +19,14 @@ const reducer = (state = initialState, action) => {
         case SIGN_IN:
             return {
                 ...state,
-                loading: true,
+                loading: true
             }
         case SIGN_UP_SUCCESS:
+            return {
+                ...state, 
+                loading: false,
+                error: false
+            }
         case SIGN_IN_SUCCESS:
             return {
                 ...state, 
@@ -34,7 +39,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state, 
                 loading: false,
-                error: true,
+                error: true
             }
         default:
             return state;

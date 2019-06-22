@@ -27,3 +27,7 @@ export const signInSuccess = (user) => ({
 export const signInFailure = () => ({
     type: types.SIGN_IN_FAILURE
 });
+
+export const validateUser = () => ({
+    type: types.VALIDATE_USER
+});

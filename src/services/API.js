@@ -1,28 +1,14 @@
-import axios from "axios";
-import promise from "promise";
+import axios from 'axios';
 
-// Add a request interceptor
-var axiosInstance = axios.create();
+axios.interceptors.request.use(function(config) {
+  const token = window.localStorage.getItem('token');
 
-axiosInstance.interceptors.request.use(
-  function(config) {
-    // Do something before request is sent
-    //If the header does not contain the token and the url not public, redirect to login
-    var accessToken = "test";
-
-    //if token is found add it to the header
-    if (accessToken) {
-      if (config.method !== "OPTIONS") {
-        config.headers.authorization = accessToken;
-      }
-    }
-    return config;
-  },
-  function(error) {
-    // Do something with request error
-    return promise.reject(error);
+  if ( token != null ) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
-);
+
+  return config;
+}, (err) => Promise.reject(err)); 
 
 export class API {
   constructor(baseUrl = "https://0924b73d.ngrok.io/api") {
@@ -30,7 +16,6 @@ export class API {
   }
 
   makeRequest(url, method, data) {
-    console.log(this);
     return axios({
       url: `${this.baseUrl}/${url}`,
       method,
@@ -38,3 +23,5 @@ export class API {
     }).then(data => data.data);
   }
 }
+
+export const baseUrl = '';
