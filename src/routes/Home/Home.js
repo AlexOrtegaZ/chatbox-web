@@ -1,7 +1,14 @@
-import React from 'react';
+import React from "react";
+import Profile from "./components/Profile/Profile";
 
-const Home = () => (
-    <h1>Home</h1>
-);
+class Home extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Profile />
+      </div>
+    );
+  }
+}
 
 export default Home;
