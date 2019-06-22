@@ -3,6 +3,20 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import store from './redux/createStore';
 import './App.css';
+import Home from './routes/Home';
+import Auth from './routes/Auth';
+
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    component: Home,
+  },
+  {
+    path: '/auth',
+    component: Auth
+  }
+]
 
 function App() {
   return (
@@ -10,7 +24,11 @@ function App() {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/" component={() => "Home"} />
+            {
+              routes.map(route => (
+                <Route {...route} key={route.path} />
+              ))
+            }
           </Switch>
         </Router>
       </div>
