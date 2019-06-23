@@ -18,11 +18,11 @@ class SignUp extends React.Component {
   componentDidUpdate() {
     const { history, user } = this.props;
 
-    if(user && history) {
+    if (user && history) {
       history.push("/");
-    } 
+    }
   }
-  
+
   signUp = event => {
     const { signUp } = this.props;
     const { name, username, email, password } = this.state;
@@ -39,62 +39,45 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="signup">
-        <div className="header-signUp">
-          <h1>Register</h1>
-          <hr />
-        </div>
+        <header>
+          <h2>Register</h2>
+        </header>
         <div className="form-signUp">
-          <label htmlFor="name">
-            <b>Name:</b>
-          </label>
           <input
+            className="form-input"
             type="text"
-            placeholder="Enter Name"
+            placeholder="Name"
             name="name"
             onChange={this.handleChange}
             required
           />
-          <br />
-          <br />
-          <label htmlFor="username">
-            <b>Username:</b>
-          </label>
           <input
+            className="form-input"
             type="text"
-            placeholder="Enter Username"
+            placeholder="Username"
             name="username"
             onChange={this.handleChange}
             required
           />
           <br />
-          <br />
-          <label htmlFor="email">
-            <b>Email:</b>
-          </label>
           <input
+            className="form-input"
             type="text"
-            placeholder="Enter Email"
+            placeholder="Email"
             name="email"
             onChange={this.handleChange}
             required
           />
-          <br />
-          <br />
-          <label htmlFor="password">
-            <b>Password:</b>
-          </label>
           <input
+            className="form-input"
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             name="password"
             onChange={this.handleChange}
             required
           />
-          <br />
-          <br />
-          <br />
           <button type="submit" className="registerbtn" onClick={this.signUp}>
-            Register
+            REGISTER
           </button>
         </div>
       </div>

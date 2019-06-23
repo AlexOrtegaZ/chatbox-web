@@ -1,4 +1,6 @@
 import React from "react";
+import "../../Styles.css";
+
 class SignIn extends React.Component {
   state = {
     email: "",
@@ -20,38 +22,27 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="signin">
-        <div className="header-signIn">
-          <h1>Login</h1>
-          <hr />
-        </div>
+        <header>
+          <h2>Sign In</h2>
+        </header>
         <div className="form-signIn">
-          <label htmlFor="email">
-            <b>Email:</b>
-          </label>
           <input
+            className="form-input"
             type="text"
-            placeholder="Enter Email"
+            placeholder="Email"
             name="email"
             onChange={this.handleChange}
             required
           />
-          <br />
-          <br />
-          <label htmlFor="password">
-            <b>Password:</b>
-          </label>
           <input
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             name="password"
             onChange={this.handleChange}
             required
           />
-          <br />
-          <br />
-          <br />
           <button type="submit" className="registerbtn" onClick={this.signIn}>
-            Login
+            SUBMIT
           </button>
         </div>
       </div>
