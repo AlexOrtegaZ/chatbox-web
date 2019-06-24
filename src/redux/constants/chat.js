@@ -1,0 +1,8 @@
+// fetchConversation
+export const FETCH_CHAT = 'FETCH_CHATx';
+export const FETCH_CHAT_SUCCESS = 'FETCH_CHAT_SUCCESS';
+export const FETCH_CHAT_FAILURE = 'FETCH_CHAT_FAILURE';
+// sendMessage
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';
+export const SEND_MESSAGE_FAILURE = 'SEND_MESSAGE_FAILURE';

@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import "./Styles.css";
 
-class Auth extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <SignIn />
-        <SignUp />
-      </div>
-    );
-  }
+const Auth = ({ user, validateUser, history }) => {
+  useEffect(() => {
+    if(user) {
+      history.push('/');
+    } else {
+      validateUser();
+    }
+  }, [user]);
+
+  return (
+    <div className="App">
+      <SignIn />
+      <SignUp />
+    </div>
+  );
 }
 
 export default Auth;

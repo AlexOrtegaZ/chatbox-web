@@ -10,7 +10,6 @@ function* signingUp(action) {
     const response = yield call(AuthAPI.signUp, user);
     yield put(actions.signIn(user));
   } catch (err) {
-    //console.log(err);
     yield put(actions.signUpFailure());
   }
 }
@@ -38,8 +37,6 @@ function* validateUser() {
   } catch(err) {
     console.log(err);
   }
-  
-  
 }
 
 export default [
