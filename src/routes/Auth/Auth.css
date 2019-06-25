@@ -1,12 +1,8 @@
-/* Fonts Form Google Font ::- https://fonts.google.com/  -:: */
-
-/* Start Global rules */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-/* End Global rules */
 
 .App {
   text-align: center;
@@ -33,7 +29,7 @@ header {
   margin: 2% auto 10% auto;
   text-align: center;
 }
-/* Login title form form */
+
 header h2 {
   font-size: 250%;
 }
@@ -47,11 +43,10 @@ header h2 {
   padding: 2%;
   background: rgba(232, 232, 232, 1);
 }
+
 /* form Container */
 .signin .signup {
-  display: -webkit-flex;
   display: flex;
-
   -webkit-justify-content: space-around;
   justify-content: space-around;
 
@@ -72,17 +67,13 @@ header h2 {
 input {
   width: 240px;
   height: 50px;
-
   margin-top: 2%;
   padding: 15px;
-
   font-size: 15px;
   font-family: "Abel", sans-serif;
   color: #5e6472;
-
   outline: none;
   border: none;
-
   border-radius: 0px 5px 5px 0px;
   transition: 0.2s linear;
 }
@@ -93,38 +84,33 @@ input:focus {
 }
 
 /* buttons  */
-button {
+.registerbtn {
   display: inline-block;
-  color: #252537;
-
+  color: #ffffff;
   width: 280px;
   height: 50px;
-
   padding: 0 20px;
   background: rgba(0, 86, 184, 0.73);
   border-radius: 10px;
-
   outline: none;
   border: none;
-
   cursor: pointer;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   transition: all 0.2s linear;
-
   margin: 7% auto;
   letter-spacing: 0.05em;
 }
 
 /* buttons hover */
-button:hover {
+.registerbtn:hover {
   transform: translatey(3px);
   box-shadow: none;
 }
 
 /* buttons hover Animation */
-button:hover {
+.registerbtn:hover {
   animation: ani9 0.4s ease-in-out infinite alternate;
 }
 @keyframes ani9 {

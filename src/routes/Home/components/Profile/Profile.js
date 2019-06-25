@@ -4,10 +4,10 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="profile">
-        <p>
-          <h1>Chat</h1>
-        </p>
-        <p />
+        <div className="info">
+          <div className="name">Name User</div>
+          <div className="email">user@email.com</div>
+        </div>
       </div>
     );
   }
