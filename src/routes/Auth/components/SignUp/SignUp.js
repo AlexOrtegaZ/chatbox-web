@@ -9,21 +9,7 @@ class SignUp extends React.Component {
     password: ""
   };
 
-  componentDidMount() {
-    const { validateUser } = this.props;
-
-    validateUser();
-  }
-
-  componentDidUpdate() {
-    const { history, user } = this.props;
-
-    if (user && history) {
-      history.push("/");
-    }
-  }
-
-  signUp = event => {
+  signUp = () => {
     const { signUp } = this.props;
     const { name, username, email, password } = this.state;
 
